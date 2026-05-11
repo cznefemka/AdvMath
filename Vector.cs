@@ -2,8 +2,8 @@ namespace AdvMath
 {
     public struct Vector
     {
-        public double X { get; }
-        public double Y { get; }
+        public double X { get; set; }
+        public double Y { get; set; }
 
         public Vector(double x, double y)
         {
