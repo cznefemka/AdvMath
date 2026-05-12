@@ -1,4 +1,3 @@
-using System; 
 namespace AdvMath
 {
     public struct Vector
