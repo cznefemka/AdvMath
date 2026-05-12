@@ -1,0 +1,7 @@
+namespace AdvMath
+{
+    class TransPhysics
+    {
+        
+    }
+}
