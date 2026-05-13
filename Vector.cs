@@ -28,14 +28,8 @@ namespace AdvMath
         public static Vector operator -(Vector v) => new Vector(-v.X, -v.Y); // Negate both components of the vector
         public static Vector operator --(Vector v) => new Vector(v.X - 1, v.Y - 1); // Decrement both components of the vector by 1
         public static Vector operator -(Vector a, Vector b) => new Vector(a.X - b.X, a.Y - b.Y); // Vector subtraction
-        public static Vector operator *(Vector v, Vector w) => new Vector(v.X * w.X - v.Y * w.Y, v.X * w.Y + v.Y * w.X); // Dot product
         public static Vector operator *(Vector v, double scalar) => new Vector(v.X * scalar, v.Y * scalar); // Scalar multiplication
         public static Vector operator *(double scalar, Vector v) => v * scalar; // Scalar multiplication (commutative)
-        public static Vector operator /(Vector v, Vector w) // Division of two vectors (treating them as complex numbers)
-        {
-            double denominator = w.X * w.X + w.Y * w.Y;
-            return new Vector((v.X * w.X + v.Y * w.Y) / denominator, (v.Y * w.X - v.X * w.Y) / denominator);
-        }
         public static Vector operator /(Vector v, double scalar) => new Vector(v.X / scalar, v.Y / scalar); // Scalar division
         public static Vector operator /(double scalar, Vector v) => new Vector(scalar / v.X, scalar / v.Y); // Scalar division (commutative)
 

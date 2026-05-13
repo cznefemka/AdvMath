@@ -4,7 +4,6 @@ namespace AdvMath
     {
         public Vector Position { get; set; } // Position of the object in 2D space, can be updated as the object moves
         public Velocity Velocity { get; private set;} // Velocity is read-only to ensure it can only be modified through methods that apply forces or update the object
-
         public double Mass { get; set; } // Mass of the object, can be used for more complex physics calculations
 
         public PhysObject() // Default constructor initializes position to (0,0) and velocity to zero
@@ -27,7 +26,7 @@ namespace AdvMath
             Mass = mass; // Set mass based on the provided parameter
         }
 
-         public void ApplyForce(Vector force) // Apply a force to the object, changing its velocity based on the force and time
+        public void ApplyForce(Vector force) // Apply a force to the object, changing its velocity based on the force and time
         {
             Vector acceleration = new Vector(force.X / Mass, force.Y / Mass); // Calculate acceleration using Newton's second law (F = ma)
             Velocity = new Velocity(Velocity.Direction + force.Normalize() * acceleration.Length()); // Update velocity by adding the acceleration to the current speed, keeping the same direction for simplicity
