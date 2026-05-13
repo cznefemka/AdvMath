@@ -28,7 +28,7 @@ namespace AdvMath
 
         public override string ToString() // Override ToString for easy debugging and visualization of the velocity's state
         {
-            return $"Direction: {GetVelocityVector()}, Speed: {GetSpeed()}";
+            return $"Direction: {GetVelocityVector()}, Speed: {GetSpeed():F4}";
         }
     }
 }

@@ -71,6 +71,6 @@ namespace AdvMath
 
         public static double DotProduct(Vector v1, Vector v2) => v1.X * v2.X + v1.Y * v2.Y; // Calculate the dot product of two vectors
 
-        public override string ToString() => $"({X}, {Y})"; // Return a string representation of the vector
+        public override string ToString() => $"({X:F4}, {Y:F4})"; // Return a string representation of the vector
     }
 }
