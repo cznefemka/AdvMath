@@ -34,7 +34,11 @@ namespace AdvMath
         public static Vector operator /(double scalar, Vector v) => new Vector(scalar / v.X, scalar / v.Y); // Scalar division (commutative)
 
         public double Length() => System.Math.Sqrt(X * X + Y * Y); // Calculate the magnitude of the vector
-        public Vector Normalize() => this / Length(); // Return a unit vector in the same direction
+        public Vector Normalize()
+        {
+            if (Length() == 0) return new Vector(0, 0); // Return a zero vector if the length is zero to avoid division by zero
+            return this / Length(); // Return a unit vector in the same direction   
+        }
 
         // Calculate the angle between two vectors in radians
         public static double AngleBetween(Vector v1, Vector v2) // Note: This method returns a vector where the X component is the angle in radians and the Y component is set to 0 for simplicity

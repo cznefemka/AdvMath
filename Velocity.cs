@@ -13,8 +13,8 @@ namespace AdvMath
 
         public Velocity(Vector direction) // Constructor to initialize only the direction, speed defaults to 1
         {
-            Direction = direction;
-            Speed = 1; // Default speed is 1 if only direction is provided
+            Direction = direction.Normalize();
+            Speed = direction.Length(); // Set speed based on the length of the direction vector for more intuitive initialization
         }
 
         public Velocity(Vector direction, double speed) // Constructor to initialize both direction and speed
@@ -28,7 +28,7 @@ namespace AdvMath
 
         public override string ToString() // Override ToString for easy debugging and visualization of the velocity's state
         {
-            return $"Direction: {GetVelocityVector()}, Speed: {GetSpeed():F4}";
+            return $"Direction: {Direction}, Speed: {GetSpeed():F4}";
         }
     }
 }
